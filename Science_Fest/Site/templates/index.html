@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+
+{%block css%}
+<link rel="stylesheet" href="{% static 'css/index.css'%}">
+{%endblock%}
+
+{% block content %}
+<div>
+    <p>{{concurs.header}}</p>
+    <p>{{concurs.description}}</p>
+    <p>{{concurs.data}}</p>
+</div>
+<div class="d-flex justify-content-center">
+    <form action="register/" method="post" style="max-width:450px">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-body p-lg-3 pb-1 text-black">
+                <h4 class="mb-3">Регистрация на фестиваль</h4>
+                {% for field in form %}
+                <div class="form-outline mb-4">
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <div class="d-flex justify-content-center pt-3 mb-sm-2 mb-2">
+                    <input type="submit" class="btn btn-success ms-2" value="Зарегистрироваться" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

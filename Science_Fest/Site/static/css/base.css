@@ -1,0 +1,20 @@
+.link{
+    margin-right: 20px;
+}
+@media (min-width: 1400px) {
+    .link:hover{
+        transform: scale(1.05, 1.05);
+        transition: all 0.3s linear;
+    }
+}
+
+@media (max-width: 1450px) {
+    .navbar-nav{
+        margin-left: 5rem !important;
+    }
+}
+@media (max-width: 1399px) {
+    .navbar-nav{
+        margin-left: 0 !important;
+    }
+}
